@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WAPH- TULASIRAM NAKKANABOINA</title>
+</head>
+<body>
+<div >
+	<div id="top">
+		<h1>Web Application Programming and Hacking</h1>
+		<h2>Front End Development Lab </h2>
+		<h3>Instructor : Dr Phu Phung</h3>
+	</div>
+		<div id="menubar">
+		<h3>Student : Tulasiram Nakkanaboina</h3>
+		<div id="email" onclick="showOrHideEmail()">Display my Email</div>
+		<script type="text/javascript" src="email.js"></script>
+		<img src="images/headshot.jpg" alt="Tulasiram headshot" width="50">
+      		<div id="digital-clock"></div>
+		<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+		<script src="https://waph-uc.github.io/clock.js"></script>
+		</div>
+		<div id="main">
+			<p>A Simple HTML Page</p>
+			Using the <a href="https://www.w3schools.com/html">W3 Schools Template</a>
+			<hr>
+			<b>Interaction with HTTP Forms</b>
+			<div>
+				<i>Form with HTTP GET Request</i>
+				<form action="/echo.php" method="GET">
+				<label for="data">Enter the input text</label>
+				<input type="text" name="data" onkeyup="console.log('you have clicked a Key')">
+				<input type="submit" value="submit">
+				</form>
+			</div>
+			<div>
+				<i>Form with HTTP POST Request</i>
+				<form action="/echo.php" method="POST">
+				<label for="data">Enter the input text</label>
+				<input type="text" name="data" onkeyup="console.log('you have clicked a Key')">
+				<input type="submit" value="submit">
+				</form>
+			</div>
+      <hr>
+				<div>
+				<b>Experiments with JavaScript code</b><br>
+				<i>Inlined JavaScript</i>
+				<div id="inlineDate" onClick="document.getElementById('inlineDate').innerHTML=Date(); console.log('you have clicked a Key');">Click to dsplay time and date</div>
+		</div>
+</div>
+		<script>
+		function displayTime() {
+			document.getElementById('digital-clock').innerHTML=" The current Time is : "+ Date();
+		}
+		setInterval(displayTime,500);
+	</script>
+	<script type=text/javascript>
+			var canvas=document.getElementById("analog-clock");
+			var ctx=canvas.getContext("2d");
+			var radius = canvas.height/2;
+			ctx.translate(radius,radius);
+			radius=radius*0.90;
+			setInterval(drawClock,1000);
+			function drawClock(){
+				drawFace(ctx,radius);
+				drawNumbers(ctx,radius);
+				drawTime(ctx,radius);
+				}
+  </script>
+</body>
+</html>
