@@ -1,24 +1,32 @@
-window.addEventListener('DOMContentLoaded', () => {
-    // Place all your code here
-    // Activate Bootstrap scrollspy on the main nav element
-    const sideNav = document.body.querySelector('#sideNav');
+// Function to activate Bootstrap scrollspy on the main nav element
+function activateScrollSpy() {
+    const sideNav = document.querySelector('#sideNav');
     if (sideNav) {
         new bootstrap.ScrollSpy(document.body, {
             target: '#sideNav',
             rootMargin: '0px 0px -40%',
         });
-    };
+    }
+}
 
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
+// Function to collapse responsive navbar when toggler is visible
+function collapseNavbar() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const responsiveNavItems = document.querySelectorAll('#navbarResponsive .nav-link');
+    responsiveNavItems.forEach(responsiveNavItem => {
         responsiveNavItem.addEventListener('click', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
             }
         });
     });
-});
+}
+
+// Function to execute when DOM content is loaded
+function init() {
+    activateScrollSpy();
+    collapseNavbar();
+}
+
+// Event listener for DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', init);
