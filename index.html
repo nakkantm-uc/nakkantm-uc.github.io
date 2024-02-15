@@ -272,6 +272,7 @@
 			document.getElementById('digital-clock').innerText=" The current Time is : "+ Date();
 		}
 		setInterval(displayTime,500);
+		function displayJoke(){
 		$.get("https://v2.jokeapi.dev/joke/Programming?type=single",function(result){
 				console.log("from joke API: "+ JSON.stringify(result));
 				if (result && result.joke) {
@@ -281,6 +282,8 @@
 				 $("#response").text("Could not retrieve a joke at this time.");	
 				}
 			});
+		}
+		setInterval(displayJoke,60*1000);
         function setCookie(name, value, expiryDays) {
             const d = new Date();
             d.setTime(d.getTime() + (expiryDays*24*60*60*1000));
