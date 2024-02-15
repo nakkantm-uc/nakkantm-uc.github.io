@@ -172,5 +172,3 @@ function setCookie(name, value, expiryDays) {
 ![Utilizing cookies to remember the User](images/6.png)
 
 ![Utilizing cookies to show revisiting USer](images/7.png)
-
-****************************  END  ***********************
