@@ -35,7 +35,7 @@
     <body id="page-top">
 	    <div id="greeting-root"></div>
 		<script src="greetings.js"></script>
-	    <div id="greeting"></div>
+	    <div id="greetingCookie">Hello</div>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -307,7 +307,7 @@
 
         function welcomeUser() {
             const lastVisit = getCookie("lastVisit");
-            const greetingElement = document.getElementById("greeting");
+            const greetingElement = document.getElementById("greetingCookie");
             if (lastVisit) {
                 greetingElement.innerHTML = "Welcome back! Your last visit was on " + lastVisit + ".";
             } else {
