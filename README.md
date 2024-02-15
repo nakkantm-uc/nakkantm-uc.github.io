@@ -9,7 +9,7 @@
 
 **Email**: nakkantm@mail.uc.edu
 
-![Tulasiram Nakkanaboina](images/headshot1.jpeg)
+![Tulasiram Nakkanaboina](images/headshot1.jpg)
 
 
 ## Individual Project 1 - Professional Profile Website
@@ -74,15 +74,18 @@ function displayJoke(){
 Weather Widget code: 
 ```JS
 <div class="weather-widget">
-		<a class="weatherwidget-io" href="https://forecast7.com/en/39d10n84d51/cincinnati/"
-	data-label_1="CINCINNATI" data-label_2="WEATHER" data-theme="original" >CINCINNATI WEATHER</a>
-		<script>
+<a class="weatherwidget-io"
+ href="https://forecast7.com/en/39d10n84d51/cincinnati/"
+	data-label_1="CINCINNATI" data-label_2="WEATHER"
+ 	data-theme="original" >CINCINNATI WEATHER</a>
+<script>
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
 		if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
 		js.src='https://weatherwidget.io/js/widget.min.js';
-		fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-		</script>
-		</div>
+		fjs.parentNode.insertBefore(js,fjs);}}
+(document,'script','weatherwidget-io-js');
+</script>
+</div>
 ```
 
 ![weather widget](images/5.png)
@@ -91,7 +94,8 @@ Moreover some of the code from lab 2  to include digital clock, analog clock and
 \pagebreak
 
 To make the portfolio interesting i have add a custom greeting message using react. This code helps in greeting the user Good Morning , Good evening , Good afternoon based on the time of the day.
- ```JS
+
+```JS
 <head>
 <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -152,7 +156,8 @@ function setCookie(name, value, expiryDays) {
             const lastVisit = getCookie("lastVisit");
             const greetingElement = document.getElementById("greetingCookie");
             if (lastVisit) {
-                greetingElement.innerHTML = "Welcome back! Your last visit was on " + lastVisit + ".";
+                greetingElement.innerHTML =
+		 "Welcome back! Your last visit was on " + lastVisit + ".";
             } else {
                 greetingElement.innerHTML = "Welcome to my portfolio!";
             }
@@ -166,5 +171,4 @@ function setCookie(name, value, expiryDays) {
 ![Utilizing cookies to remember the User](images/6.png)
 ![Utilizing cookies to show revisiting USer](images/7.png)
 
-
-***********************************************************  END  *****************************************************
+****************************  END  ***********************
