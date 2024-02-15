@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
 <title>WAPH- TULASIRAM NAKKANABOINA</title>
 </head>
 <script>
@@ -27,23 +29,29 @@
 			<p>A Simple HTML Page</p>
 			Using the <a href="https://www.w3schools.com/html">W3 Schools Template</a>
 			<hr>
-			<b>Interaction with HTTP Forms</b>
-			<div>
-				<i>Form with HTTP GET Request</i>
-				<form action="/echo.php" method="GET">
-				<lable for="data">Enter the input text</lable>
-				<input type="text" name="data" onkeyup="console.log('you have clicked a Key')">
-				<input type="submit" value="submit">
-				</form>
-			</div>
-			<div>
-				<i>Form with HTTP POST Request</i>
-				<form action="http://waph-hackathon.eastus.cloudapp.azure.com/xss/level2/echo.php" method="POST">
-				<lable for="data">Enter the input text</lable>
-				<input type="text" name="input" onkeyup="console.log('you have clicked a Key')">
-				<input type="submit" value="submit">
-				</form>
-			</div>
+			<h2>Labs</h2>
+    <ul>
+        <li><a href="#" onclick="loadReadme('/README.md')">Lab 0</a></li>
+        <li><a href="#" onclick="loadReadme('path/to/README2.md')">Lab 1</a></li>
+        <li><a href="#" onclick="loadReadme('path/to/README3.md')">Lab 2</a></li>
+    </ul>
+	<hr>
+	<h2>Hackathon</h2>
+        <li><a href="#" onclick="loadReadme('path/to/README1.md')">Lab 0</a></li>
+    <div id="readme-content" style="margin-top: 20px;"></div>
+
+    <script>
+        function loadReadme(path) {
+            fetch(path)
+            .then(response => response.text())
+            .then(text => {
+                var converter = new showdown.Converter(),
+                html = converter.makeHtml(text);
+                document.getElementById('readme-content').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading the README file:', error));
+        }
+    </script>
 		</div>
 	</div>
 </div>
