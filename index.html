@@ -14,6 +14,9 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+	<style>#response{
+			background-color:#ff9800;
+		}</style>
     </head>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-736JEW5RXQ"></script>
@@ -71,6 +74,7 @@
                         <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
                     </div>
+			<div id="response"></div>
                 </div>
             </section>
             <hr class="m-0" />
@@ -233,6 +237,15 @@
 				drawNumbers(ctx,radius);
 				drawTime(ctx,radius);
 				}
+		$.get("https://v2.jokeapi.dev/joke/Programming?type=single",function(result){
+				console.log("from joke API: "+ JSON.stringify(result));
+				if (result && result.joke) {
+				$("#response").text("Programming joke of the day: " +result.joke);
+				}
+				else{
+				 $("#response").text("Could not retrieve a joke at this time.");	
+				}
+			});
          </script>
     </body>
 </html>
