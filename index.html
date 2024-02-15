@@ -56,6 +56,8 @@
                         727 Martin Luther King Dr w Apt 1012· Cincinnati, Ohio , 45220 · (513) 301-6220 ·
                         <a href="mailto:nakkantm@mail.uc.edu">nakkantm@mail.uc.edu</a>
                     </div>
+                    <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+		            <script src="https://waph-uc.github.io/clock.js"></script>
                     <p class="lead mb-5">•Full Stack Developer | Reliable | Dedicated | Optimistic | committed engineer with a get-it-done, on-time , and high-quality spirit | Passionate on equipping new skills
                        <br> •Possesses a strong command of the Software Development Life Cycle (SDLC), showcasing adept skills in analyzing requirements, designing solutions, executing development processes, and seamless production.</p>
                     <div class="social-icons">
@@ -214,5 +216,18 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script type=text/javascript>
+			var canvas=document.getElementById("analog-clock");
+			var ctx=canvas.getContext("2d");
+			var radius = canvas.height/2;
+			ctx.translate(radius,radius);
+			radius=radius*0.90;
+			setInterval(drawClock,1000);
+			function drawClock(){
+				drawFace(ctx,radius);
+				drawNumbers(ctx,radius);
+				drawTime(ctx,radius);
+				}
+         </script>
     </body>
 </html>
