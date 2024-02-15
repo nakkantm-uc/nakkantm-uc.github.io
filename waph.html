@@ -30,27 +30,22 @@
 			Using the <a href="https://www.w3schools.com/html">W3 Schools Template</a>
 			<hr>
 			<h2>Labs</h2>
-    <ul>
-        <li><a href="#" onclick="loadReadme('/README.md')">Lab 0</a></li>
-        <li><a href="#" onclick="loadReadme('path/to/README2.md')">Lab 1</a></li>
-        <li><a href="#" onclick="loadReadme('path/to/README3.md')">Lab 2</a></li>
-    </ul>
+    	<ul>
+    		<li><a href="#" onclick="loadPdf('/lab0.pdf')">Lab 0</a></li>
+    		<li><a href="#" onclick="loadPdf('path/to/lab2.pdf')">Lab 2</a></li>
+    		<li><a href="#" onclick="loadPdf('path/to/lab3.pdf')">Lab 3</a></li>
+	</ul>
+
+<iframe id="pdfViewer" width="600" height="400" style="border: none;"></iframe>
 	<hr>
 	<h2>Hackathon</h2>
         <li><a href="#" onclick="loadReadme('path/to/README1.md')">Lab 0</a></li>
     <div id="readme-content" style="margin-top: 20px;"></div>
 
     <script>
-        function loadReadme(path) {
-            fetch(path)
-            .then(response => response.text())
-            .then(text => {
-                var converter = new showdown.Converter(),
-                html = converter.makeHtml(text);
-                document.getElementById('readme-content').innerHTML = html;
-            })
-            .catch(error => console.error('Error loading the README file:', error));
-        }
+        function loadPdf(path) {
+    document.getElementById('pdfViewer').src = path;
+}
     </script>
 		</div>
 	</div>
