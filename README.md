@@ -1,4 +1,3 @@
-
 # WAPH-Web Application Programming and Hacking
 
 ## Instructor: Dr. Phu Phung
@@ -9,7 +8,7 @@
 
 **Email**: nakkantm@mail.uc.edu
 
-![Tulasiram Nakkanaboina](images/headshot1.jpg)
+![Tulasiram Nakkanaboina](images/headshot1.jpeg)
 
 
 ## Individual Project 1 - Professional Profile Website
