@@ -118,7 +118,8 @@ const Greeting = () => {
   return React.createElement('h2', null, greetingMessage);
 };
 
-ReactDOM.render(React.createElement(Greeting, null), document.getElementById('greeting-root'));
+ReactDOM.render(React.createElement(Greeting, null),
+document.getElementById('greeting-root'));
 ```
 
 \pagebreak
@@ -167,7 +168,9 @@ function setCookie(name, value, expiryDays) {
         welcomeUser();
 </script>
 ```
+
 ![Utilizing cookies to remember the User](images/6.png)
+
 ![Utilizing cookies to show revisiting USer](images/7.png)
 
 ****************************  END  ***********************
